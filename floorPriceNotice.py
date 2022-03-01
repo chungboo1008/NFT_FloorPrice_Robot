@@ -1,4 +1,4 @@
-from email import message
+import os
 import requests
 import discord
 from discord.ext import tasks
@@ -66,7 +66,7 @@ class MyClient(discord.Client):
 
     @tasks.loop(hours=1) # task runs every 60 seconds
     async def my_background_task(self):
-        channel = self.get_channel(907516476808917022) # channel ID goes here
+        channel = self.get_channel(os.environ['CHANNEL']) # channel ID goes here
         msg = job()
         await channel.send(msg)
 
@@ -76,4 +76,4 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
-    client.run('OTQ0OTYyMzUzOTE5ODMyMDY0.YhJOxQ.DHI9xU_Mw4xB-W8IX4nZD37Ek8E')
+    client.run(os.environ['DISCORD_TOKEN'])
