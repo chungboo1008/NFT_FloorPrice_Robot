@@ -69,10 +69,21 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
         print('------')
-        channel = self.get_channel('907516476808917022') # channel ID goes here
-        msg = job()
-        await channel.send(msg)
-        
+    
+    async def on_message(message):
+    #排除自己的訊息，避免陷入無限循環
+    if message.author == client.user:
+        return
+    #如果以「說」開頭
+    if message.content.startswith('test'):
+        await message.channel.send("沙小？")
+      #分割訊息成兩份
+#       tmp = message.content.split(" ",2)
+      #如果分割後串列長度只有1
+#       if len(tmp) == 1:
+#         await message.channel.send("你要我說什麼啦？")
+#       else:
+#         await message.channel.send(tmp[1])
 
     @tasks.loop(hours=1) # task runs every 60 seconds
     async def my_background_task(self):
@@ -83,12 +94,6 @@ class MyClient(discord.Client):
     @my_background_task.before_loop
     async def before_my_task(self):
         await self.wait_until_ready() # wait until the bot logs in
-        
-    async def on_ready(self):
-        print(f'Logged in as {self.user} (ID: {self.user.id})')
-        print('------')
-        # start the task to run in the background
-        self.my_background_task.start()
 
 if __name__ == '__main__':
     client = MyClient()
