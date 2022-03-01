@@ -96,4 +96,4 @@ async def before_my_task(self):
 
 if __name__ == '__main__':
 #     client = MyClient()
-    client.run(DISCOED_TOKEN)
+    client.run(DISCORD_TOKEN)
