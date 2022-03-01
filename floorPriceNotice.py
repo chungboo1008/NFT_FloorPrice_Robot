@@ -78,7 +78,21 @@ class MyClient(discord.Client):
     @my_background_task.before_loop
     async def before_my_task(self):
         await self.wait_until_ready() # wait until the bot logs in
+  
+async def on_ready(self):
+    print(f'Logged in as {self.user} (ID: {self.user.id})')
+    print('------')
+
+@tasks.loop(minutes=1) # task runs every 60 seconds
+async def my_background_task(self):
+    channel = self.get_channel(CHANNEL) # channel ID goes here
+    msg = job()
+    await channel.send(msg)
+
+@my_background_task.before_loop
+async def before_my_task(self):
+    await self.wait_until_ready() # wait until the bot logs in
 
 if __name__ == '__main__':
-    client = MyClient()
+#     client = MyClient()
     client.run(TOKEN)
