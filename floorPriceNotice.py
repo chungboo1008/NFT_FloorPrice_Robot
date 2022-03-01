@@ -98,9 +98,9 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
-#     channel = discord.utils.get(client.get_all_channels(), guild__name='Cool', name='general')
-#     print(f'channel{channel}')
-#     channel.send('Im here!') 
-    for guild in client.fetch_guilds(limit=150):
-        print(guild.name)
+    channel = discord.utils.get(client.get_all_channels(), guild__name='卡稱刷卡', name='一般')
+    print(f'channel{channel}')
+    channel.send('Im here!') 
+#     for guild in client.fetch_guilds(limit=150):
+#         print(guild.name)
     client.run(DISCORD_TOKEN)
