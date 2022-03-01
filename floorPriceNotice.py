@@ -59,6 +59,7 @@ def job():
     return message
 
 def search():
+    message = 'haha'
     return message
 
 class MyClient(discord.Client):
@@ -92,9 +93,10 @@ class MyClient(discord.Client):
     #     await self.wait_until_ready() # wait until the bot logs in
 
 if __name__ == '__main__':
+    scheduler = BlockingScheduler()
+    scheduler.add_job(job, 'cron', minute='*')
+    scheduler.start()
+    
     client = MyClient()
     # channel = discord.utils.get(client.get_all_channels(), guild__name='BalaRobot', name='一般')
     client.run('DISCORD_TOKEN')
-
-    scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', minute='*')
