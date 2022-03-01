@@ -66,9 +66,9 @@ class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
-        scheduler = BlockingScheduler()
-        scheduler.add_job(job, 'cron', minute='*')
-        scheduler.start()
+#         scheduler = BlockingScheduler()
+#         scheduler.add_job(job, 'cron', minute='*')
+#         scheduler.start()
 
         # start the task to run in the background
         # self.my_background_task.start()
