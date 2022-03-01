@@ -75,8 +75,9 @@ class MyClient(discord.Client):
         if message.author == client.user:
             return
         #如果以「說」開頭
-        if message.content.startswith('test'):
-            await message.channel.send("沙小？")
+        if message.content.startswith('!floor'):
+            msg = job()
+            await message.channel.send(msg)
           #分割訊息成兩份
     #       tmp = message.content.split(" ",2)
           #如果分割後串列長度只有1
