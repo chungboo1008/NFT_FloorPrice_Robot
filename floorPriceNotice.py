@@ -55,7 +55,7 @@ def job():
         floor_price.append(response.json()['collection']['stats']['floor_price'])
 
     message = msgFormat(project_list, floor_price)
-    lineNotifyMessage(token, message)
+    lineNotifyMessage(message)
     return message
 
 def search():
