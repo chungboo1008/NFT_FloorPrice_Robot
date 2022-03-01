@@ -52,9 +52,10 @@ def job():
 
     message = msgFormat(project_list, floor_price)
     lineNotifyMessage(message)
-    return message
+    print('Line!')
+    return None
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', hour='*')
+    scheduler.add_job(job, 'cron', minute='*')
     scheduler.start()
