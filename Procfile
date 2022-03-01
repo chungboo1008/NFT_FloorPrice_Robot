@@ -1,1 +1,2 @@
-worker: python floorPriceNotice.py
+LineBot: python LineBot.py
+DiscordBot: python LineBot.py
