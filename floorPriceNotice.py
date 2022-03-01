@@ -65,6 +65,10 @@ def search():
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        scheduler = BlockingScheduler()
+        scheduler.add_job(job, 'cron', minute='*')
+        scheduler.start()
 
         # start the task to run in the background
         # self.my_background_task.start()
@@ -93,10 +97,6 @@ class MyClient(discord.Client):
     #     await self.wait_until_ready() # wait until the bot logs in
 
 if __name__ == '__main__':
-    scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', minute='*')
-    scheduler.start()
     
     client = MyClient()
-    # channel = discord.utils.get(client.get_all_channels(), guild__name='BalaRobot', name='一般')
     client.run('DISCORD_TOKEN')
