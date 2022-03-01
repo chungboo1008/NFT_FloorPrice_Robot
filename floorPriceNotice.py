@@ -75,5 +75,6 @@ class MyClient(discord.Client):
         await self.wait_until_ready() # wait until the bot logs in
 
 if __name__ == '__main__':
+    print('87in')
     client = MyClient()
     client.run(os.environ['DISCORD_TOKEN'])
