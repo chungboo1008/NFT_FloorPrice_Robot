@@ -70,7 +70,7 @@ class MyClient(discord.Client):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
         print('------')
     
-    async def on_message(message):
+    async def on_message(self, message):
         #排除自己的訊息，避免陷入無限循環
         if message.author == client.user:
             return
