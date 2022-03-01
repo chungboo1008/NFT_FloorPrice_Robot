@@ -68,7 +68,7 @@ class MyClient(discord.Client):
 
     @tasks.loop(hours=1) # task runs every 60 seconds
     async def my_background_task(self):
-        channel = self.get_channel(CHANNEL) # channel ID goes here
+        channel = self.get_channel('907516476808917022') # channel ID goes here
         msg = job()
         await channel.send(msg)
 
