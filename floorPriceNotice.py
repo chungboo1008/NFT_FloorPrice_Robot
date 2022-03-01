@@ -98,4 +98,7 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
+    channel = client.get_channel('907516476808917022')
+    print(f'channel{channel}')
+    channel.send('Im here!')
     client.run(DISCORD_TOKEN)
