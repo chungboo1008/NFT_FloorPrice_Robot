@@ -66,6 +66,14 @@ class MyClient(discord.Client):
         # start the task to run in the background
 #         self.my_background_task.start()
 
+    async def on_ready(self):
+        print(f'Logged in as {self.user} (ID: {self.user.id})')
+        print('------')
+        channel = self.get_channel('907516476808917022') # channel ID goes here
+        msg = job()
+        await channel.send(msg)
+        
+
     @tasks.loop(hours=1) # task runs every 60 seconds
     async def my_background_task(self):
         channel = self.get_channel('907516476808917022') # channel ID goes here
