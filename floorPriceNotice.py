@@ -1,5 +1,6 @@
 import os
 import requests
+import guild
 import discord
 from discord.ext import tasks
 from discord.ext import commands
