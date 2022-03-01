@@ -38,9 +38,29 @@ def job():
         floor_price.append(response.json()['collection']['stats']['floor_price'])
 
     message = msgFormat(project_list, floor_price)
-    lineNotifyMessage(message)
-    print('Line!')
     return message
+
+heplMsg = '''
+!floor [project name / number] -> return its floor price
+!project -> return all project and its number
+'''
+
+project_and_id = '''
+
+'''
+
+project2id = {
+    'Meebits': 'meebits',
+    'ALPACADABRAZ': 'alpacadabraz',
+    'ALPACADABRAZ_3D': 'alpacadabraz-3d',
+    'Zoofrenz': 'zoofrenznft',
+    'Cupcat Kittens': 'cupcatkittens',
+    '1': 'meebits',
+    '2': 'alpacadabraz',
+    '3': 'alpacadabraz-3d',
+    '4': 'zoofrenznft',
+    '5': 'cupcatkittens',
+}
 
 def search():
     message = 'haha'
@@ -63,20 +83,12 @@ class MyClient(discord.Client):
         if message.author == client.user:
             return
         #如果以「說」開頭
-        if message.content.startswith('!floor'):
-            msg = search()
+        if message.content == '!floor' :
+            msg = job()
             await message.channel.send(msg)
-
-    # @tasks.loop(hours=1) # task runs every 60 seconds
-    # async def my_background_task(self):
-    #     channel = self.get_channel(907516476808917022) # channel ID goes here
-    #     msg = job()
-    #     await channel.send(msg)
-
-    # @my_background_task.before_loop
-    # async def before_my_task(self):
-    #     await self.wait_until_ready() # wait until the bot logs in
-
+        elif message.content == 'help':
+            await message.channel.send(heplMsg)
+        
 if __name__ == '__main__':
     client = MyClient()
     client.run(DISCORD_TOKEN)
