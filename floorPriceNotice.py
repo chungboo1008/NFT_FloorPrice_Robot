@@ -101,5 +101,6 @@ if __name__ == '__main__':
 #     channel = discord.utils.get(client.get_all_channels(), guild__name='Cool', name='general')
 #     print(f'channel{channel}')
 #     channel.send('Im here!') 
-    print(client.fetch_guilds(limit=150))
+    for guild in client.fetch_guilds(limit=150):
+        print(guild.name)
     client.run(DISCORD_TOKEN)
