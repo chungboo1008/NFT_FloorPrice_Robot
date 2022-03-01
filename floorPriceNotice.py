@@ -94,7 +94,7 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', minutes='*')
+    scheduler.add_job(job, 'cron', minute='*')
     scheduler.start()
     
     client = MyClient()
