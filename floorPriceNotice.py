@@ -2,6 +2,11 @@ import os
 import requests
 import discord
 from discord.ext import tasks
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix="!")
+TOKEN = os.getenv("DISCORD_TOKEN")
+CHANNEL = os.getenv("CHANNEL")
 
 def lineNotifyMessage(token, msg):
     headers = {
@@ -66,7 +71,7 @@ class MyClient(discord.Client):
 
     @tasks.loop(hours=1) # task runs every 60 seconds
     async def my_background_task(self):
-        channel = self.get_channel(os.environ['CHANNEL']) # channel ID goes here
+        channel = self.get_channel(CHANNEL) # channel ID goes here
         msg = job()
         await channel.send(msg)
 
@@ -75,6 +80,5 @@ class MyClient(discord.Client):
         await self.wait_until_ready() # wait until the bot logs in
 
 if __name__ == '__main__':
-    print('87in')
     client = MyClient()
-    client.run(os.environ['DISCORD_TOKEN'])
+    client.run(TOKEN)
