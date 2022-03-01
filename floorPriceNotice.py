@@ -97,4 +97,4 @@ if __name__ == '__main__':
     client.run('DISCORD_TOKEN')
 
     scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'cron', hour='*')
+    scheduler.add_job(job, 'cron', minute='*')
