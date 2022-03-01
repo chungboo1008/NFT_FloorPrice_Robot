@@ -5,7 +5,8 @@ from discord.ext import tasks
 from discord.ext import commands
 
 client = commands.Bot(command_prefix="!")
-TOKEN = os.getenv("DISCORD_TOKEN")
+LINE_TOKEN = os.getenv("LINE_TOKEN")
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL = os.getenv("CHANNEL")
 
 def lineNotifyMessage(token, msg):
@@ -31,7 +32,7 @@ def msgFormat(project, floor_price):
     return msg
     
 def job():
-    token = 'r92kGJEWTdJAUhKJpHHzJcpLnEz5GlXNx7jAD40hmgq'
+    token = 'LINE_TOKEN'
 
     project_list = [
         'Meebits',
@@ -95,4 +96,4 @@ async def before_my_task(self):
 
 if __name__ == '__main__':
 #     client = MyClient()
-    client.run(TOKEN)
+    client.run(DISCOED_TOKEN)
