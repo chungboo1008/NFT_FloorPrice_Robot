@@ -69,6 +69,8 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged in as {self.user} (ID: {self.user.id})')
         print('------')
+        channel = self.get_channel('907516476808917022')
+        print(f'channel: {channel}')
     
     async def on_message(self, message):
         #排除自己的訊息，避免陷入無限循環
@@ -98,9 +100,4 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
-    channel = discord.utils.get(client.get_all_channels(), guild__name='卡稱刷卡', name='一般')
-    print(f'channel{channel}')
-    channel.send('Im here!') 
-#     for guild in client.fetch_guilds(limit=150):
-#         print(guild.name)
     client.run(DISCORD_TOKEN)
