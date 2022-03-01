@@ -4,7 +4,7 @@ import discord
 from discord.ext import tasks
 from discord.ext import commands
 
-client = commands.Bot(command_prefix="!")
+# client = commands.Bot(command_prefix="!")
 LINE_TOKEN = os.getenv("LINE_TOKEN")
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL = os.getenv("CHANNEL")
