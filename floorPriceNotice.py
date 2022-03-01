@@ -32,7 +32,7 @@ def msgFormat(project, floor_price):
     return msg
     
 def job():
-    token = 'LINE_TOKEN'
+    token = LINE_TOKEN
 
     project_list = [
         'Meebits',
@@ -98,7 +98,7 @@ class MyClient(discord.Client):
 
 if __name__ == '__main__':
     client = MyClient()
-    channel = client.get_channel('907516476808917022')
+    channel = discord.utils.get(guild.text_channels, name="一般")
     print(f'channel{channel}')
     channel.send('Im here!')
     client.run(DISCORD_TOKEN)
