@@ -94,7 +94,11 @@ async def listDB(message):
         # 讀取 CSV 檔案內容
         rows = csv.reader(csvfile)
         msg = ''
+        the_first = True
         for row in rows:
+            if the_first:
+                the_first = False
+                continue
             msg += f'{row[0]}: {row[1]}\n'
     await message.channel.send(msg)
 
