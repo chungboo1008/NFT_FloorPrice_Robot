@@ -6,8 +6,7 @@ from discord.ext import tasks, commands
 
 bot = commands.Bot(command_prefix='$')
 
-# DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-DISCORD_TOKEN = 'OTQ0OTYyMzUzOTE5ODMyMDY0.YhJOxQ.p2wh21dObPxgTi_Doy3ki7Cmu30'
+DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 myChannel = 'command_line'
 
 project2id = {}
@@ -126,14 +125,3 @@ async def help(message):
         
 if __name__ == '__main__':
     bot.run(DISCORD_TOKEN)
-    
-
-    # # 開啟輸出的 CSV 檔案
-    # with open('mapping_project2id.csv', 'w', newline='') as csvfile:
-    #     # 建立 CSV 檔寫入器
-    #     writer = csv.writer(csvfile)
-
-    #     # 寫入一列資料
-    #     writer.writerow(['project name', 'url id'])
-    #     for key in project2id.keys():
-    #         writer.writerow([key, project2id[key]])
