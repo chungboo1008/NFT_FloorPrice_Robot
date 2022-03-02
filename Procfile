@@ -1,2 +1,2 @@
 LineBot: python LineBot.py
-DiscordBot: python DiscordBot.py
+DiscordBot: python DiscordBot_command.py
