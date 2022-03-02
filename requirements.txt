@@ -1,4 +1,3 @@
 requests
 apscheduler
 discord.py
-csv
