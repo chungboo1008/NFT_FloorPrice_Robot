@@ -59,16 +59,12 @@ def getAllFloorPrice():
 
 @bot.command()
 async def floor(message, arg):
-    if str(message.channel) != myChannel:
-        return
     project_name = arg
     msg = getFloorPrice(project_name)
     await message.channel.send(msg)
 
 @bot.command()
 async def floor_all(message):
-    if str(message.channel) != myChannel:
-        return
     msg = getAllFloorPrice()
     await message.channel.send(msg)
 
