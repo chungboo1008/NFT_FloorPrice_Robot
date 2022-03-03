@@ -81,7 +81,7 @@ async def insert(message, *args):
         writer = csv.writer(csvfile)
         writer.writerow([project_name, project_id])
     project2id[project_name] = project_id
-    msg = f'Insert don!\nProject name: {project_name}\nProject id: {project_id}'
+    msg = f'Insert done!\nProject name: {project_name}\nProject id: {project_id}'
     await message.channel.send(msg)
 
 @bot.command()
