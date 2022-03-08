@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BalaGinjo</title>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-N5WZVZX');</script>
+	<!-- End Google Tag Manager -->
+	<script>
+		function change(click_id){
+			if(click_id == 'btn1'){
+				cache="<img src='https://stickershop.line-scdn.net/stickershop/v1/sticker/279543133/android/sticker.png'>"; 
+			}
+			else if(click_id == 'btn2'){
+				cache="<img src='https://stickershop.line-scdn.net/stickershop/v1/sticker/279543135/IOS/sticker.png'>"; 
+			}
+			else if(click_id == 'btn3'){
+				cache="<img src='https://stickershop.line-scdn.net/stickershop/v1/sticker/279543125/android/sticker.png'>"; 
+			}
+			document.getElementById("photo").innerHTML=cache;
+			}
+	</script>
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5WZVZX"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+<div>
+	<img src = "https://stickershop.line-scdn.net/stickershop/v1/sticker/279543115/android/sticker.png">
+	<div>
+		<button id="btn1" onclick="change(this.id)">Reply 1</button>
+		<button id="btn2" onclick="change(this.id)">Reply 2</button>
+		<button id="btn3" onclick="change(this.id)">Reply 3</button>
+		<div id="photo"></div>
+	</div>
+	
+</div>
+
+</body>
+
+<style type="text/css"></style>
+</html>
