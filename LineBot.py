@@ -31,17 +31,19 @@ def job():
 
     project_list = [
         'Meebits',
+        'BAYC',
+        'MAYC',
         'ALPACADABRAZ',
         'ALPACADABRAZ 3D',
-        'Zoofrenz',
-        'Cupcat Kittens'
+        'Zoofrenz'
     ]
     url_list = [
         'https://api.opensea.io/collection/meebits',
+        'https://api.opensea.io/collection/boredapeyachtclub',
+        'https://api.opensea.io/collection/mutant-ape-yacht-club',
         'https://api.opensea.io/collection/alpacadabraz',
         'https://api.opensea.io/collection/alpacadabraz-3d',
-        'https://api.opensea.io/collection/zoofrenznft',
-        'https://api.opensea.io/collection/cupcatkittens'
+        'https://api.opensea.io/collection/zoofrenznft'
     ]
 
     response = []
